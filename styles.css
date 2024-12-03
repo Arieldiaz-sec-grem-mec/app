@@ -8,7 +8,7 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: #e8f5e9; /* Fondo verde claro */
 }
 
 body {
@@ -18,43 +18,66 @@ body {
 
 /* Encabezado */
 .header {
-  background-color: #333;
+  background-color: #2e7d32; /* Verde oscuro */
   padding: 10px;
 }
 
 .botones {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center;
+  gap: 15px;
 }
 
 /* Botones */
 .boton {
-  flex: 1 1 calc(50% - 10px); /* Dos botones por fila */
-  padding: 15px;
-  background-color: #007bff;
+  width: 60px;
+  height: 60px;
+  background-color: #4caf50; /* Verde principal */
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
+  line-height: 60px; /* Centrar el texto verticalmente */
   border: none;
-  border-radius: 50px; /* Botón redondo */
+  border-radius: 50%; /* Botón completamente redondo */
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Efecto hover */
 .boton:hover {
-  background-color: #0056b3;
+  background-color: #388e3c; /* Verde más oscuro */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px);
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
 }
 
 /* Efecto click */
 .boton:active {
-  transform: translateY(2px);
+  transform: scale(0.95); /* Se reduce al hacer clic */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto visual adicional (brillo interno) */
+.boton::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.boton:hover::before {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 /* Contenido del iframe */
@@ -67,5 +90,5 @@ body {
   width: 100%;
   height: 100%;
   border: none;
-  background-color: #fff;
+  background-color: #ffffff;
 }
