@@ -1,78 +1,71 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Estilos globales */
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Encabezado */
 .header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #333;
+  padding: 10px;
 }
 
-.header .botones {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.header .boton {
-    background-color: #4caf50; /* Color verde */
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    border-radius: 50px; /* Botones redondos */
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Botones */
+.boton {
+  flex: 1 1 calc(50% - 10px); /* Dos botones por fila */
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 50px; /* Botón redondo */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.header .boton:hover {
-    background-color: #388e3c; /* Color verde oscuro al pasar el mouse */
+/* Efecto hover */
+.boton:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
 }
 
-/* Contenido */
+/* Efecto click */
+.boton:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido del iframe */
 .contenido {
-    padding: 20px;
-    text-align: center;
+  flex: 1;
+  display: flex;
 }
 
 #iframe-contenido {
-    width: 100%;
-    height: 500px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .header .botones {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header .boton {
-        width: 80%;
-        margin: 10px 0;
-    }
-
-    #iframe-contenido {
-        height: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header .boton {
-        width: 100%;
-    }
-
-    #iframe-contenido {
-        height: 200px;
-    }
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #fff;
 }
