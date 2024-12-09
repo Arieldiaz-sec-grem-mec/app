@@ -1,108 +1,225 @@
-/* Fuente y reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
+/* Estilos generales */
 body {
-  background-image: url('foto.jpg'); /* Verifica que la imagen esté en la ruta correcta */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #f0f0f0;
-  line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('./foto.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+    text-align: center;
 }
 
-.header {
-  width: 100%;
-  max-width: 1200px;
-  background-color: rgba(20, 20, 20, 0.8);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
+/* Contenedor principal */
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    /* Fondo negro transparente */
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 20px;
 }
 
-.botones {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.boton {
-  flex: 1;
-  min-width: 200px;
-  margin: 0 5px;
-  padding: 15px;
-  background-color: #333;
-  color: #f0f0f0;
-  border: 2px solid #555;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
+/* Título principal */
+h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    /* Tamaño del texto aumentado */
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+    /* Borde negro */
 }
 
-.boton:hover {
-  background-color: #444;
-  transform: scale(1.05);
+/* Párrafo principal */
+p {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1.2em;
+    /* Tamaño del texto aumentado */
+    text-shadow: 1px 1px #000000;
+    /* Borde negro */
 }
 
-.contenido {
-  width: 90%;
-  max-width: 1200px;
-  height: 70vh;
-  background-color: rgba(20, 20, 20, 0.9);
-  border-radius: 12px;
-  padding: 10px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+/* Botones principales */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-#iframe-contenido {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 8px;
+button {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #a9e34b;
+    /* Verde suave */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    /* Tamaño del texto aumentado */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .header {
+button:hover {
+    background: rgba(169, 227, 75, 0.1);
+    /* Verde suave transparente */
+    transform: translateY(-5px);
+}
+
+button:active {
+    background: rgba(169, 227, 75, 0.2);
+    /* Verde suave más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Formularios */
+#formulario {
+    background: rgba(0, 0, 0, 0.5);
+    /* Fondo negro transparente */
+    border: 2px solid #ffffff;
+    border-radius: 10px;
     padding: 15px;
-  }
-
-  .botones {
-    flex-direction: column;
-  }
-
-  .boton {
-    margin: 5px 0;
-  }
-
-  .contenido {
-    height: 60vh;
-  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin-top: 20px;
 }
 
-@media screen and (max-width: 375px) {
-  .boton {
-    padding: 10px;
-    font-size: 14px;
-  }
+#formulario h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    /* Tamaño del texto aumentado */
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+    /* Borde negro */
+}
 
-  .contenido {
-    height: 50vh;
-  }
+#formulario label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+    /* Borde negro */
+}
+
+#formulario input[type="text"],
+#formulario input[type="email"],
+#formulario input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    /* Bordes blancos */
+    border-radius: 5px;
+    font-size: 1em;
+    /* Tamaño del texto aumentado */
+    text-shadow: 1px 1px #000000;
+    /* Borde negro */
+}
+
+#formulario button {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #a9e34b;
+    /* Verde suave */
+    border-radius: 5px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1.2em;
+    /* Tamaño del texto aumentado */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#formulario button:hover {
+    background: rgba(169, 227, 75, 0.1);
+    /* Verde suave transparente */
+    transform: translateY(-5px);
+}
+
+#formulario button:active {
+    background: rgba(169, 227, 75, 0.2);
+    /* Verde suave más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Barra de progreso */
+.barra-container {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Fondo negro transparente */
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.barra {
+    width: 0%;
+    height: 100%;
+    background: #a9e34b;
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+
+.porcentaje {
+    margin-left: 10px;
+    font-size: 1em;
+    /* Tamaño del texto aumentado */
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+    /* Borde negro */
+}
+
+/* Clases de ocultación */
+.hidden {
+    display: none;
+}
+
+/* Medios Responsivos */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    #formulario h2 {
+        font-size: 1.2em;
+    }
+
+    #formulario input[type="text"],
+    #formulario input[type="email"],
+    #formulario input[type="password"] {
+        font-size: 0.9em;
+    }
+
+    #formulario button {
+        padding: 8px;
+        font-size: 0.9em;
+    }
 }

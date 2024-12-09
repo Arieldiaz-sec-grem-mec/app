@@ -1,0 +1,72 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('./foto.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Semitransparente */
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.boton {
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 10px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+}
+
+.contenido {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#iframe-contenido {
+  width: 100%;
+  height: calc(100vh - 120px);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .botones {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .boton {
+    width: 100%;
+    text-align: center;
+  }
+
+  #iframe-contenido {
+    height: calc(100vh - 150px);
+  }
+}
