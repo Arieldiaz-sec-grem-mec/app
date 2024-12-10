@@ -11,10 +11,9 @@ if (nombreUsuario) {
 
 // Lista de URLs de las webs
 const urls = [
-  "https://arieldiaz-sec-grem-mec.github.io/formulariopermiosgremiales/",
-  "https://arieldiaz-sec-grem-mec.github.io/utiles2025/",
-  "https://arieldiaz-sec-grem-mec.github.io/escalasMA/",
-  "https://arieldiaz-sec-grem-mec.github.io/cepeda/"
+ "/permisos/index.html",
+ "/utiles/index.html",
+ "/indemnizacion/index.html"
 ];
 
 // Índice actual
