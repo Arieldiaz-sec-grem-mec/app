@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Indemnización</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Indemnizacion simple</h1>
+        <form id="calculoForm">
+            <label for="haberes">Haberes ($):</label>
+            <input type="number" id="haberes" placeholder="Mejor Haberes" required>
+
+            <label for="anios">Años trabajados:</label>
+            <input type="number" id="anios" placeholder="Años a calcular" required>
+
+            <button type="button" id="calcularBtn">Calcular</button>
+        </form>
+
+        <div id="resultado">
+            <h2>Detalle del Cálculo</h2>
+            <p id="detalle"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
