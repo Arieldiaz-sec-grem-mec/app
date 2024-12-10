@@ -11,9 +11,9 @@ if (nombreUsuario) {
 
 // Lista de URLs de las webs
 const urls = [
- "./permisos/index.html",
- "/utiles/index.html",
- "/indemnizacion/index.html"
+ "../permisos/index.html",
+ "../utiles/index.html",
+ "../indemnizacion/index.html"
 ];
 
 // Índice actual
