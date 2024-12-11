@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Compañeros</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Formulario Compañeros</h1>
+    <form id="companionForm">
+      <label for="name">Nombre y Apellido:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="affiliateNumber">Número de Afiliado:</label>
+      <input type="text" id="affiliateNumber" name="affiliateNumber" required pattern="\d{6}/\d{2}">
+
+      <label for="document">Documento N°:</label>
+      <input type="number" id="document" name="document" required>
+
+      <label for="category">Categoría:</label>
+      <input type="text" id="category" name="category" required>
+
+      <label for="task">Tarea:</label>
+      <input type="text" id="task" name="task" required>
+
+      <label for="admissionDate">Fecha de Ingreso:</label>
+      <input type="date" id="admissionDate" name="admissionDate" required>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="progress-bar" id="progressBar">
+      <div class="progress" id="progress"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

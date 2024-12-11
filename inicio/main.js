@@ -13,7 +13,8 @@ if (nombreUsuario) {
 const urls = [
  "../permisos/index.html",
  "../utiles/index.html",
- "../indemnizacion/index.html"
+ "../indemnizacion/index.html",
+ "../compa/index.html"
 ];
 
 // Índice actual
