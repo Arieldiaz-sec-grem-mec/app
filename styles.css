@@ -10,10 +10,14 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
+    flex-direction: column;
 }
 
 /* Contenedor principal */
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
     max-width: 400px;
     padding: 20px;
@@ -36,7 +40,7 @@ p {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 45px;
     margin-bottom: 20px;
 }
 
@@ -68,6 +72,9 @@ button:active {
     background-color: transparent;
     padding: 20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #formulario h2 {
@@ -81,6 +88,8 @@ button:active {
     margin-bottom: 5px;
     font-weight: bold;
     color: #cccccc;
+    text-align: left;
+    width: 100%;
 }
 
 #formulario input[type="text"],
@@ -111,7 +120,7 @@ button:active {
     background: transparent;
     color: #ffcc00;
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: bolder;
     cursor: pointer;
     transition: background 0.3s, color 0.3s, transform 0.3s;
 }
@@ -130,14 +139,16 @@ button:active {
 
 /* Barra de progreso */
 .barra-container {
+    width: 85%;
+    max-width: 400px;
     margin-top: 20px;
-    
     background-color: #333333;
     border-radius: 15px;
     height: 25px;
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center; /* Centrar la barra de progreso */
 }
 
 .barra {
@@ -152,6 +163,7 @@ button:active {
     margin-left: 10px;
     font-size: 1em;
     color: #ffffff;
+    text-align: center;
 }
 
 /* Medios Responsivos */

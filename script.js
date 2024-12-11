@@ -50,7 +50,7 @@ function simularProgreso(completadoCallback) {
 // Función para mostrar el formulario de registro
 function mostrarFormularioRegistro() {
     formulario.innerHTML = `
-        <h2>Registro</h2>
+        <h2>Completar los datos</h2>
         <form id="registroForm">
             <label for="nombre">Nombre Completo:</label>
             <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo" required>
@@ -73,7 +73,7 @@ function mostrarFormularioRegistro() {
 // Función para mostrar el formulario de login
 function mostrarFormularioLogin() {
     formulario.innerHTML = `
-        <h2>Login</h2>
+        <h2>Iniciar Sesión</h2>
         <form id="loginForm">
             <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
