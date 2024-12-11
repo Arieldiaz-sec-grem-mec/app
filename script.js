@@ -11,20 +11,30 @@ const porcentaje = document.getElementById('porcentaje');
 // URL del Web App de Google Apps Script
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyrHhYnyIA5Xh-hWmq0vPxLmCOM-YS4hF_ZG-PPviu02fQ6uNDqNit5EiHRNsaAESl5KQ/exec';
 
-// Mostrar la barra de progreso
 function mostrarBarraProgreso() {
     barraProgreso.classList.remove('hidden');
     barra.style.width = '0%';
+    barra.style.backgroundColor = 'rgb(255, 0, 0)';
     porcentaje.innerText = '0%';
 }
 
-// Actualizar la barra de progreso
+function calcularColorProgreso(porcentajeProgreso) {
+    const inicioColor = [255, 0, 0]; // Rojo
+    const finColor = [0, 255, 0];   // Verde
+
+    const r = inicioColor[0] + ((finColor[0] - inicioColor[0]) * (porcentajeProgreso / 100));
+    const g = inicioColor[1] + ((finColor[1] - inicioColor[1]) * (porcentajeProgreso / 100));
+    const b = inicioColor[2] + ((finColor[2] - inicioColor[2]) * (porcentajeProgreso / 100));
+
+    return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
+}
+
 function actualizarBarraProgreso(porcentajeProgreso) {
     barra.style.width = `${porcentajeProgreso}%`;
+    barra.style.backgroundColor = calcularColorProgreso(porcentajeProgreso);
     porcentaje.innerText = `${porcentajeProgreso}%`;
 }
 
-// Función para manejar eventos de barra de progreso
 function simularProgreso(completadoCallback) {
     let progreso = 0;
     const interval = setInterval(() => {
