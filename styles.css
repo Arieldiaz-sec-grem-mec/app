@@ -131,8 +131,9 @@ button:active {
 /* Barra de progreso */
 .barra-container {
     margin-top: 20px;
+    
     background-color: #333333;
-    border-radius: 5px;
+    border-radius: 15px;
     height: 25px;
     overflow: hidden;
     display: flex;
@@ -141,9 +142,9 @@ button:active {
 
 .barra {
     width: 0;
-    height: 100%;
+    height: 80%;
     background-color: #ffcc00;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: width 0.3s;
 }
 
