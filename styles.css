@@ -1,5 +1,4 @@
-Te voy a comprar un css necesito que hagas esto 
-La barra de progreso necesito que sea una línea amarilla que de cero a 100 valla rodeando el contenedor si es que eso es posible sin modificar el html ? /* Estilos generales */
+/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
@@ -129,31 +128,38 @@ button:active {
     transform: scale(0.95);
 }
 
-/* Barra de progreso */
+/* Barra de progreso circular */
 .barra-container {
-    margin-top: 20px;
-    background-color: #333333;
-    border-radius: 5px;
-    height: 25px;
+    position: relative;
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px;
+    margin: 20px auto; /* Centrado */
+    background-color: transparent;
+    border-radius: 50%; /* Hace que el contenedor sea circular */
     overflow: hidden;
-    display: flex;
-    align-items: center;
 }
 
-.barra {
-    width: 0;
+.barra-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background-color: #ffcc00;
-    border-radius: 5px;
-    transition: width 0.3s;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: #ffcc00; /* Color de la barra de progreso */
+    animation: progreso 3s linear infinite; /* Duración del progreso */
 }
 
-.porcentaje {
-    margin-left: 10px;
-    font-size: 1em;
-    color: #ffffff;
+@keyframes progreso {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-
 /* Medios Responsivos */
 @media (max-width: 600px) {
     .container {
