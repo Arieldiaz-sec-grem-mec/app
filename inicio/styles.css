@@ -8,7 +8,12 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
-  overflow: hidden; /* Evita el scroll innecesario */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 /* Encabezado */
@@ -20,6 +25,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0; /* Asegura que el encabezado no se reduzca */
 }
 
 .header #user-name {
@@ -40,16 +46,16 @@ header {
   background-color: #d63333;
 }
 
-/* Contenedor principal */
+/* Contenedor principal con desplazamiento */
 main {
-  flex: 1;
+  flex: 1; /* Toma el espacio restante entre el encabezado y pie de página */
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
   width: 100%;
-  display: flex;
 }
 
 iframe#web-viewer {
   width: 100%;
-  height: calc(100vh - 70px - 60px); /* Altura ajustada: pantalla total - encabezado - pie de página */
+  height: 100%; /* Ocupa todo el espacio de su contenedor */
   border: none;
 }
 
@@ -59,12 +65,13 @@ footer {
   padding: 10px;
   background-color: #333333;
   display: flex;
-  justify-content: space-between; /* Botones a los extremos */
+  justify-content: space-between; /* Botones en los extremos */
   align-items: center;
+  flex-shrink: 0; /* Asegura que el pie de página no se reduzca */
 }
 
 footer .nav-btn {
-  margin: 0 10px; /* Espaciado interno con el borde */
+  margin: 0 10px;
   background-color: transparent;
   color: #ff4d4d;
   border: 2px solid #ff4d4d;
@@ -97,7 +104,7 @@ footer .nav-btn:active {
   }
 
   footer .nav-btn {
-    margin: 0 5px; /* Reduce el margen en dispositivos pequeños */
+    margin: 0 5px;
     padding: 10px;
     font-size: 1.3em;
   }
