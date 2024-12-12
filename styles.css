@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos Generales */
 body {
     margin: 0;
     padding: 0;
@@ -13,34 +13,22 @@ body {
     flex-direction: column;
 }
 
-/* Contenedor principal */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 90%;
     max-width: 400px;
     padding: 20px;
-    text-align: center;
 }
 
 h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.5em;
     color: #ffcc00;
-}
-
-p {
-    font-size: 1.2em;
     margin-bottom: 20px;
-    color: #cccccc;
 }
 
-/* Botones principales */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 45px;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
@@ -50,52 +38,37 @@ button {
     border: 2px solid #ffcc00;
     padding: 10px 15px;
     border-radius: 5px;
-    font-size: 1em;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s, transform 0.3s;
+    font-size: 1em;
+    transition: background 0.3s, color 0.3s;
 }
 
 button:hover {
     background: #ffcc00;
     color: #000000;
-    transform: scale(1.05);
-}
-
-button:active {
-    background: #e6b800;
-    color: #000000;
-    transform: scale(0.95);
 }
 
 /* Formularios */
-#formulario {
-    background-color: transparent;
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.formulario {
+    display: none; /* Ocultos por defecto */
 }
 
-#formulario h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #ffcc00;
+.formulario.active {
+    display: block; /* Mostrar formulario activo */
 }
 
-#formulario label {
+label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #cccccc;
     text-align: left;
-    width: 100%;
 }
 
-#formulario input[type="text"],
-#formulario input[type="email"],
-#formulario input[type="password"] {
-    width: calc(100% - 22px);
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     background: #333333;
@@ -105,107 +78,68 @@ button:active {
     font-size: 1em;
 }
 
-#formulario input[type="text"]:focus,
-#formulario input[type="email"]:focus,
-#formulario input[type="password"]:focus {
+input:focus {
     border-color: #ffcc00;
     outline: none;
 }
 
-#formulario button {
+button[type="submit"] {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #ffcc00;
-    border-radius: 5px;
     background: transparent;
     color: #ffcc00;
-    font-size: 1.2em;
-    font-weight: bolder;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 
-#formulario button:hover {
+button[type="submit"]:hover {
     background: #ffcc00;
     color: #000000;
-    transform: scale(1.05);
+}
+/* Botones de navegación */
+.nav-button.hidden {
+    display: none; /* Ocultar botón */
 }
 
-#formulario button:active {
-    background: #e6b800;
-    color: #000000;
-    transform: scale(0.95);
-}
-
-/* Barra de progreso */
+/* Contenedor de la barra de progreso */
 .barra-container {
-    width: 85%;
-    max-width: 400px;
-    margin-top: 20px;
-    background-color: #333333;
-    border-radius: 15px;
+    position: relative;
+    width: 100%;
     height: 25px;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centrar la barra de progreso */
+    margin-top: 20px;
 }
 
+/* Barra de progreso (indicador) */
 .barra {
-    width: 0;
-    height: 80%;
-    background-color: #ffcc00;
-    border-radius: 15px;
-    transition: width 0.3s;
+    height: 100%;
+    width: 0%;
+    background-color: red;
+    transition: width 0.5s ease, background-color 0.5s ease;
 }
 
+/* Texto de porcentaje */
 .porcentaje {
-    margin-left: 10px;
-    font-size: 1em;
-    color: #ffffff;
-    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    line-height: 25px;
 }
 
-/* Medios Responsivos */
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 15px;
-    }
+/* Ocultar elementos */
+.hidden {
+    display: none;
+}
 
-    h1 {
-        font-size: 1.8em;
-    }
-
-    p {
-        font-size: 1.1em;
-    }
-
-    button {
-        padding: 8px 12px;
-        font-size: 0.9em;
-    }
-
-    #formulario h2 {
-        font-size: 1.3em;
-    }
-
-    #formulario input[type="text"],
-    #formulario input[type="email"],
-    #formulario input[type="password"] {
-        font-size: 0.9em;
-    }
-
-    #formulario button {
-        padding: 8px;
-        font-size: 1.1em;
-    }
-
-    .barra-container {
-        height: 20px;
-    }
-
-    .porcentaje {
-        font-size: 0.9em;
-    }
+.disabled {
+    pointer-events: none; /* Desactiva la interacción con los elementos */
+    opacity: 0.5; /* Opcional: hace que los elementos aparezcan "desactivados" */
 }
