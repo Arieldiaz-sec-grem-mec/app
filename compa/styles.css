@@ -18,7 +18,7 @@ html, body {
   max-width: 500px; /* Limita el ancho máximo para móviles */
   margin: 0 auto; /* Centra el formulario horizontalmente */
   padding: 20px;
-  background-color: #333; /* Fondo gris oscuro para el contenedor */
+  background-color: #33333300; /* Fondo gris oscuro para el contenedor */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   display: flex;
