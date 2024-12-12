@@ -8,7 +8,8 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Color de texto blanco para que resalte sobre el fondo negro */
 }
 
 /* Contenedor principal */
@@ -17,9 +18,9 @@ html, body {
   max-width: 500px; /* Limita el ancho máximo para móviles */
   margin: 0 auto; /* Centra el formulario horizontalmente */
   padding: 20px;
-  background-color: white;
+  background-color: #333; /* Fondo gris oscuro para el contenedor */
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +28,7 @@ html, body {
 
 h1 {
   font-size: 1.5rem;
-  color: #333;
+  color: #fff; /* Título blanco */
   margin-bottom: 20px;
   text-align: center;
 }
@@ -39,7 +40,7 @@ form {
 
 label {
   font-size: 1rem;
-  color: #555;
+  color: #ccc; /* Color gris claro para las etiquetas */
   margin-bottom: 5px;
   display: block;
 }
@@ -50,24 +51,27 @@ input[type="date"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #555; /* Borde gris claro */
   border-radius: 5px;
   font-size: 1rem;
   outline: none;
+  background-color: #444; /* Fondo gris oscuro para los inputs */
+  color: #fff; /* Texto blanco en los inputs */
   transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus {
-  border-color: #007BFF;
+  border-color: #007BFF; /* Color azul al enfocar */
+  transform: scale(1); /* Desactiva el efecto de zoom */
 }
 
 /* Botón de enviar */
 button[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #007BFF;
+  background-color: #007BFF; /* Azul para el botón */
   color: white;
   border: none;
   border-radius: 5px;
@@ -77,7 +81,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Azul más oscuro al hacer hover */
 }
 
 button[type="submit"]:active {
