@@ -1,150 +1,100 @@
-// Referencias a los elementos principales
-const btnRegistro = document.getElementById('btnRegistro');
-const btnLogin = document.getElementById('btnLogin');
-const formulario = document.getElementById('formulario');
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+    const showLogin = document.getElementById("show-login");
+    const showRegister = document.getElementById("show-register");
+    const barraProgreso = document.getElementById("barraProgreso");
+    const barra = document.getElementById("barra");
+    const porcentaje = document.getElementById("porcentaje");
 
-// Referencias a la barra de progreso
-const barraProgreso = document.getElementById('barraProgreso');
-const barra = document.getElementById('barra');
-const porcentaje = document.getElementById('porcentaje');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyrHhYnyIA5Xh-hWmq0vPxLmCOM-YS4hF_ZG-PPviu02fQ6uNDqNit5EiHRNsaAESl5KQ/exec';
 
-// URL del Web App de Google Apps Script
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyrHhYnyIA5Xh-hWmq0vPxLmCOM-YS4hF_ZG-PPviu02fQ6uNDqNit5EiHRNsaAESl5KQ/exec';
+    // Alternar formularios
+    showLogin.addEventListener("click", () => {
+        loginForm.classList.remove("hidden");
+        registerForm.classList.add("hidden");
+        showLogin.classList.add("hidden");
+        showRegister.classList.remove("hidden");
+    });
 
-function mostrarBarraProgreso() {
-    barraProgreso.classList.remove('hidden');
-    barra.style.width = '0%';
-    barra.style.backgroundColor = 'rgb(255, 0, 0)';
-    porcentaje.innerText = '0%';
-}
+    showRegister.addEventListener("click", () => {
+        registerForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+        showRegister.classList.add("hidden");
+        showLogin.classList.remove("hidden");
+    });
 
-function calcularColorProgreso(porcentajeProgreso) {
-    const inicioColor = [255, 0, 0]; // Rojo
-    const finColor = [0, 255, 0];   // Verde
+    // Mostrar barra de progreso
+    function mostrarBarraProgreso() {
+        barraProgreso.classList.remove("hidden");
+        barra.style.width = "0%";
+        porcentaje.innerText = "0%";
 
-    const r = inicioColor[0] + ((finColor[0] - inicioColor[0]) * (porcentajeProgreso / 100));
-    const g = inicioColor[1] + ((finColor[1] - inicioColor[1]) * (porcentajeProgreso / 100));
-    const b = inicioColor[2] + ((finColor[2] - inicioColor[2]) * (porcentajeProgreso / 100));
+        // Bloquear la interfaz
+        document.body.classList.add('disabled');
+    }
 
-    return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
-}
+    function actualizarBarraProgreso(progreso) {
+        barra.style.width = `${progreso}%`;
+        porcentaje.innerText = `${progreso}%`;
+    }
 
-function actualizarBarraProgreso(porcentajeProgreso) {
-    barra.style.width = `${porcentajeProgreso}%`;
-    barra.style.backgroundColor = calcularColorProgreso(porcentajeProgreso);
-    porcentaje.innerText = `${porcentajeProgreso}%`;
-}
-
-function simularProgreso(completadoCallback) {
-    let progreso = 0;
-    const interval = setInterval(() => {
-        progreso += 10;
-        actualizarBarraProgreso(progreso);
-        if (progreso >= 100) {
-            clearInterval(interval);
-            completadoCallback();
-        }
-    }, 500);
-}
-
-// Función para mostrar el formulario de registro
-function mostrarFormularioRegistro() {
-    formulario.innerHTML = `
-        <h2>Completar los datos</h2>
-        <form id="registroForm">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo" required>
-
-            <label for="email">Correo Electronico:</label>
-            <input type="email" id="Correo electronico" name="email" placeholder="Ingrese su correo electrónico" required>
-
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
-
-            <label for="passwordConfirm">Confirmar Contraseña:</label>
-            <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirme su contraseña" required>
-
-            <button type="submit">Registrar</button>
-        </form>
-    `;
-    formulario.classList.remove('hidden');
-}
-
-// Función para mostrar el formulario de login
-function mostrarFormularioLogin() {
-    formulario.innerHTML = `
-        <h2>Iniciar Sesión</h2>
-        <form id="loginForm">
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
-
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
-
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-    `;
-    formulario.classList.remove('hidden');
-}
-
-// Función para enviar los datos de registro
-function enviarRegistro(event) {
-    event.preventDefault();
-    mostrarBarraProgreso();
-
-    const formData = new FormData(event.target);
-
-    fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => {
-            if (response.ok) {
-                simularProgreso(() => {
-                    alert('Registro enviado exitosamente.');
-                    event.target.reset();
-                    barraProgreso.classList.add('hidden');
-                });
-            } else {
-                throw new Error('Error al enviar el registro.');
+    // Simulación de progreso
+    function simularProgreso(completadoCallback) {
+        let progreso = 0;
+        const interval = setInterval(() => {
+            progreso += 10;
+            actualizarBarraProgreso(progreso);
+            if (progreso >= 100) {
+                clearInterval(interval);
+                setTimeout(completadoCallback, 300); // Esperar 300ms después de completar la barra
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Ocurrió un error al conectar con el servidor.');
-            barraProgreso.classList.add('hidden');
-        });
-}
+        }, 500); // Avanzar cada 500ms
+    }
 
-// Función para enviar los datos de login
-function enviarLogin(event) {
-    event.preventDefault();
-    mostrarBarraProgreso();
+    // Enviar registro
+    document.getElementById("registerForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        mostrarBarraProgreso();
 
-    const formData = new FormData(event.target);
+        const formData = new FormData(event.target);
 
-    fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                simularProgreso(() => {
-                    alert(`Inicio de sesión exitoso. Bienvenido, ${data.nombre}!`);
-                    localStorage.setItem('nombreUsuario', data.nombre);
-                    window.location.href = "inicio/index.html";
-                });
-            } else {
-                throw new Error(data.message || 'Error en el inicio de sesión.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Ocurrió un error al conectar con el servidor.');
-            barraProgreso.classList.add('hidden');
-        });
-}
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => {
+                if (response.ok) {
+                    simularProgreso(() => {
+                        alert("Registro exitoso. Ahora puedes iniciar sesión.");
+                        localStorage.setItem("usuario", formData.get("email"));
+                        showLogin.click();
+                    });
+                } else {
+                    throw new Error("Error al registrar.");
+                }
+            })
+            .catch(error => alert("Error: " + error.message));
+    });
 
-// Inicializar eventos y formularios
-btnRegistro.addEventListener('click', mostrarFormularioRegistro);
-btnLogin.addEventListener('click', mostrarFormularioLogin);
+    // Enviar login
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        mostrarBarraProgreso();
 
-document.addEventListener('submit', event => {
-    if (event.target.id === 'registroForm') enviarRegistro(event);
-    if (event.target.id === 'loginForm') enviarLogin(event);
+        const formData = new FormData(event.target);
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    simularProgreso(() => {
+                        alert(`Bienvenido, ${data.nombre}`);
+                        localStorage.setItem("usuario", data.nombre);
+                        window.location.href = "inicio/index.html";
+                    });
+                } else {
+                    throw new Error("Credenciales incorrectas.");
+                }
+            })
+            .catch(error => alert("Error: " + error.message));
+    });
 });
+
