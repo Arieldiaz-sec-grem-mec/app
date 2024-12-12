@@ -1,67 +1,82 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  form label {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  form input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  .progress-bar {
-    width: 100%;
-    background: #e0e0e0;
-    border-radius: 5px;
-    margin-top: 10px;
-    height: 20px;
-  }
-  
-  .progress {
-    width: 0%;
-    height: 100%;
-    background: #007bff;
-    border-radius: 5px;
-    transition: width 0.3s ease-in-out, background 0.3s ease-in-out;
-  }
-  
+/* Asegura que el contenido ocupe todo el espacio del iframe */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000; /* Fondo negro */
+  font-family: Arial, sans-serif;
+  color: #fff; /* Texto blanco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #f1c40f; /* Amarillo dorado */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  text-align: left;
+  font-size: 14px;
+  color: #ccc; /* Gris claro */
+}
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+input {
+  background-color: #333; /* Gris oscuro */
+  color: #fff;
+}
+
+input:focus {
+  outline: 2px solid #f1c40f;
+}
+
+button {
+  background-color: #f1c40f;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #d4ac0d;
+}
+
+.progress-bar {
+  margin-top: 20px;
+  background-color: #333; /* Gris oscuro */
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+  position: relative;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #f1c40f; /* Amarillo */
+  transition: width 0.3s ease;
+}
