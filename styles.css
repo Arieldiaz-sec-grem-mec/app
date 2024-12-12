@@ -62,13 +62,13 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #cccccc;
-    text-align: left;
+    text-align: center;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 15px;
     background: #333333;
