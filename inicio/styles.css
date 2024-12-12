@@ -1,128 +1,111 @@
-/* Estilos generales */
-body {
+/* General */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #000000; /* Fondo negro */
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Altura completa de la ventana */
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Evita el scroll innecesario */
 }
 
 /* Encabezado */
 header {
   width: 100%;
   padding: 10px;
-  background-color: #333333; /* Fondo gris oscuro */
-  color: #ffcc00; /* Texto en color dorado */
+  background-color: #333333;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  z-index: 10;
 }
 
-#user-name {
-  font-size: 1.2em;
-  margin-left: 10px;
+.header #user-name {
+  font-size: 1em;
 }
 
-#logout-btn {
-  background-color: transparent;
-  color: #ff4d4d;
-  border: 2px solid #ff4d4d;
-  padding: 5px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-#logout-btn:hover {
-  background-color: rgba(255, 77, 77, 0.1);
-  color: #d43f3f;
-  transform: scale(1.05);
-}
-
-#logout-btn:active {
-  background-color: rgba(255, 77, 77, 0.2);
-  color: #d43f3f;
-  transform: scale(0.95);
-}
-
-/* Contenedor del iframe */
-main {
-  flex: 1; /* Se ajusta dinámicamente para ocupar el espacio restante */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1c1c1c;
-  overflow: hidden;
-}
-
-iframe {
-  width: 100%;
-  height: 100%;
+.header #logout-btn {
+  padding: 8px 12px;
+  background-color: #ff4d4d;
   border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
 }
 
-/* Pie de página */
+.header #logout-btn:hover {
+  background-color: #d63333;
+}
+
+/* Contenedor principal */
+main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+
+iframe#web-viewer {
+  width: 100%;
+  height: calc(100vh - 70px - 60px); /* Altura ajustada: pantalla total - encabezado - pie de página */
+  border: none;
+}
+
 /* Pie de página */
 footer {
   width: 100%;
   padding: 10px;
-  background-color: #333333; /* Fondo gris oscuro */
+  background-color: #333333;
   display: flex;
-  justify-content: space-between; /* Distribuye los botones en extremos opuestos */
+  justify-content: space-between; /* Botones a los extremos */
   align-items: center;
-  gap: 15px; /* Espaciado entre los botones (si hay más de dos) */
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 10;
 }
 
-/* Botones de navegación */
 footer .nav-btn {
-  margin: 0 20px; /* Espaciado izquierdo y derecho respecto al borde del pie de página */
+  margin: 0 10px; /* Espaciado interno con el borde */
   background-color: transparent;
   color: #ff4d4d;
   border: 2px solid #ff4d4d;
-  padding: 10px;
+  padding: 12px;
   font-size: 1.5em;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
-/* Medios Responsivos */
-@media (max-width: 600px) {
-  body {
-    height: 100vh;
+
+footer .nav-btn:hover {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+footer .nav-btn:active {
+  transform: scale(0.9);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
   }
 
-  header, footer {
-    padding: 5px;
-  }
-
-  #user-name {
-    font-size: 1em;
-    margin-left: 5px;
-  }
-
-  #logout-btn, .nav-btn {
-    padding: 8px;
-    font-size: 1.2em;
-  }
-
-  footer {
-    gap: 10px; /* Reduce la distancia entre botones en pantallas pequeñas */
-    padding: 5px;
+  .header #logout-btn {
+    margin-top: 10px;
   }
 
   footer .nav-btn {
-    margin: 0 10px; /* Ajusta el margen en pantallas pequeñas */
-    padding: 8px;
-    font-size: 1.2em;
+    margin: 0 5px; /* Reduce el margen en dispositivos pequeños */
+    padding: 10px;
+    font-size: 1.3em;
   }
 }
+
+@media (max-width: 400px) {
+  footer .nav-btn {
+    padding: 8px;
+    font-size: 1.1em;
+  }
 }
