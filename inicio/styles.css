@@ -63,7 +63,7 @@ iframe#web-viewer {
 footer {
   width: 100%;
   padding: 10px;
-  background-color: #333333;
+  background-color: #000000;
   display: flex;
   justify-content: space-between; /* Botones en los extremos */
   align-items: center;
@@ -72,19 +72,19 @@ footer {
 
 footer .nav-btn {
   margin: 0 10px;
-  background-color: transparent;
+  background-color: #32222254;
   color: #ff4d4d;
-  border: 2px solid #ff4d4d;
+  border: px solid #ff4d4d;
   padding: 12px;
   font-size: 1.5em;
-  border-radius: 50%;
+  border-radius: 35%;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s cubic-bezier(0, 0, 0.2, 1), color 0.3s ease, transform 0.3s ease;
 }
 
 footer .nav-btn:hover {
-  background-color: #ff4d4d;
-  color: white;
+  background-color: #4d9bff61;
+  color: #ffffff;
 }
 
 footer .nav-btn:active {
