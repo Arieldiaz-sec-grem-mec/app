@@ -1,82 +1,137 @@
-/* Asegura que el contenido ocupe todo el espacio del iframe */
-html, body {
-  margin: 10;
+/* General */
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
   height: 100%;
-  background-color: #000; /* Fondo negro */
   font-family: Arial, sans-serif;
-  color: #fff; /* Texto blanco */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #f9f9f9;
 }
 
-/*.container {
-  text-align: center;
-  max-width: 700px;
+/* Contenedor principal */
+.container {
   width: 100%;
+  max-width: 500px; /* Limita el ancho máximo para móviles */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
   padding: 20px;
+  background-color: white;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente *//*
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-*/
-h1 {
-  margin-bottom: 20px;
-  color: #f1c40f; /* Amarillo dorado */
-}
-
-form {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Formulario */
+form {
+  width: 100%;
 }
 
 label {
-  text-align: left;
-  font-size: 14px;
-  color: #ccc; /* Gris claro */
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
 }
 
-input, button {
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
   padding: 10px;
-  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+  border-color: #007BFF;
+}
+
+/* Botón de enviar */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
   border: none;
-}
-
-input {
-  background-color: #333; /* Gris oscuro */
-  color: #fff;
-}
-
-input:focus {
-  outline: 2px solid #f1c40f;
-}
-
-button {
-  background-color: #f1c40f;
-  color: #000;
+  border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-  background-color: #d4ac0d;
+button[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* Barra de progreso */
 .progress-bar {
-  margin-top: 20px;
-  background-color: #333; /* Gris oscuro */
+  width: 100%;
+  height: 10px;
+  background-color: #f3f3f3;
   border-radius: 5px;
   overflow: hidden;
-  height: 10px;
-  position: relative;
+  margin-top: 20px;
 }
 
 .progress {
-  width: 0;
+  width: 0%;
   height: 100%;
-  background-color: #f1c40f; /* Amarillo */
-  transition: width 0.3s ease;
+  background-color: #007BFF;
+  transition: width 0.5s ease;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  button[type="submit"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  button[type="submit"] {
+    font-size: 0.8rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    font-size: 0.8rem;
+  }
 }
