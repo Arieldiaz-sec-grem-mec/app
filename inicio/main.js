@@ -18,7 +18,8 @@ const urls = [
     "../permisos/index.html",
     "../utiles/index.html",
     "../indemnizacion/index.html",
-    "../compa/index.html"
+    "../compa/index.html",
+    "../compa/lista.html"
 ];
 
 // Índice actual
