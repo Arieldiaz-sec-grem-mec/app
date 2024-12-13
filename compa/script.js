@@ -17,7 +17,7 @@ form.addEventListener('submit', async (e) => {
     category: document.getElementById('category').value,
     task: document.getElementById('task').value,
     admissionDate: document.getElementById('admissionDate').value,
-    delegate: localStorage.getItem('nombreUsuario') || 'Desconocido',
+    delegate: localStorage.getItem('usuario') || 'Desconocido',
   };
 
   try {

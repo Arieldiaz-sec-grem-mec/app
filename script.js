@@ -72,6 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         alert("Registro exitoso. Ahora puedes iniciar sesión.");
                         localStorage.setItem("usuario", formData.get("email"));
                         showLogin.click();
+                        
+                        // Eliminar el efecto de opacación y habilitar la interacción
+                        document.body.classList.remove('disabled');
                     });
                 } else {
                     throw new Error("Error al registrar.");
