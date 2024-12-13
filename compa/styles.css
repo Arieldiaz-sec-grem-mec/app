@@ -20,7 +20,7 @@ body {
 
 .container {
   width: 110%;
-  max-width: 600px;
+  max-width: 400px;
   background-color: #000000; 
   border: 2px solid #4bb30e; 
   border-radius: 15px; 
@@ -32,7 +32,7 @@ body {
 .container h2 {
   text-align: center;
   font-size: 1.8em;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   color: #4bb30e; /* Texto verde */
 }
 
@@ -40,7 +40,7 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 form label {
