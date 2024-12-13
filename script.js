@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyrHhYnyIA5Xh-hWmq0vPxLmCOM-YS4hF_ZG-PPviu02fQ6uNDqNit5EiHRNsaAESl5KQ/exec';
 
+    // **Establecer estado inicial**
+    loginForm.classList.remove("hidden"); // Mostrar formulario de inicio
+    registerForm.classList.add("hidden"); // Ocultar formulario de registro
+    showLogin.classList.add("hidden"); // Ocultar botón de inicio
+    showRegister.classList.remove("hidden"); // Mostrar botón de registro
+
     // Alternar formularios
     showLogin.addEventListener("click", () => {
         loginForm.classList.remove("hidden");
@@ -97,4 +103,3 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(error => alert("Error: " + error.message));
     });
 });
-
