@@ -56,3 +56,6 @@ const logout = () => {
 if (prevBtn) prevBtn.addEventListener("click", showPrevious);
 if (nextBtn) nextBtn.addEventListener("click", showNext);
 if (logoutBtn) logoutBtn.addEventListener("click", logout);
+
+
+  

@@ -17,6 +17,9 @@ body {
     width: 90%;
     max-width: 400px;
     padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: #11111100;
 }
 
 h1 {
@@ -25,6 +28,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Botones */
 .buttons {
     display: flex;
     justify-content: center;
@@ -40,21 +44,37 @@ button {
     border-radius: 25px;
     cursor: pointer;
     font-size: 1em;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
 button:hover {
     background: #00ff0db7;
     color: #000000;
+    transform: scale(1.05);
 }
 
 /* Formularios */
 .formulario {
     display: none; /* Ocultos por defecto */
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeOut 0.5s forwards;
 }
 
 .formulario.active {
     display: block; /* Mostrar formulario activo */
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 label {
@@ -77,6 +97,7 @@ input[type="password"] {
     border-radius: 25px;
     font-size: 1em;
     text-align: center;
+    transition: border-color 0.3s;
 }
 
 input:focus {
@@ -98,32 +119,25 @@ button[type="submit"]:hover {
     background: #00ff0db7;
     color: #000000;
 }
-/* Botones de navegación */
-.nav-button.hidden {
-    display: none; /* Ocultar botón */
-}
 
-/* Contenedor de la barra de progreso */
+/* Barra de progreso */
 .barra-container {
     position: relative;
     width: 100%;
     height: 25px;
-    background-color: #f3f3f3;
-    border: 1px solid #ccc;
+    background-color: #333333;
     border-radius: 25px;
     overflow: hidden;
     margin-top: 20px;
 }
 
-/* Barra de progreso (indicador) */
 .barra {
     height: 100%;
     width: 0%;
-    background-color: rgb(0, 255, 21);
-    transition: width 0.5s ease, background-color 0.5s ease;
+    background-color: #00ff0db7;
+    transition: width 0.5s ease;
 }
 
-/* Texto de porcentaje */
 .porcentaje {
     position: absolute;
     top: 0;
@@ -131,16 +145,37 @@ button[type="submit"]:hover {
     transform: translateX(-50%);
     font-size: 14px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
     line-height: 25px;
 }
 
-/* Ocultar elementos */
+/* Clases reutilizables */
+.rounded {
+    border-radius: 25px;
+}
+
 .hidden {
     display: none;
 }
 
 .disabled {
-    pointer-events: none; /* Desactiva la interacción con los elementos */
-    opacity: 0.5; /* Opcional: hace que los elementos aparezcan "desactivados" */
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
 }
