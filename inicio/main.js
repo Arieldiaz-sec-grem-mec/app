@@ -1,20 +1,24 @@
 // Obtener el nombre del usuario almacenado en localStorage
-const nombreUsuario = localStorage.getItem("Usuario");
+const nombreUsuario = localStorage.getItem("usuario");
 
 // Mostrar el nombre del usuario en el contenedor correspondiente
 const userDisplay = document.getElementById("user-name");
-if (nombreUsuario) {
-    userDisplay.textContent = `Bienvenido, ${Usuario}`;
+if (userDisplay) {
+    if (nombreUsuario) {
+        userDisplay.textContent = `Bienvenido, ${nombreUsuario}`;
+    } else {
+        userDisplay.textContent = "Usuario desconocido";
+    }
 } else {
-    userDisplay.textContent = "Usuario desconocido";
+    console.warn("No se encontró el elemento 'user-name'.");
 }
 
 // Lista de URLs de las webs
 const urls = [
- "../permisos/index.html",
- "../utiles/index.html",
- "../indemnizacion/index.html",
- "../compa/index.html"
+    "../permisos/index.html",
+    "../utiles/index.html",
+    "../indemnizacion/index.html",
+    "../compa/index.html"
 ];
 
 // Índice actual
@@ -31,23 +35,23 @@ iframe.src = urls[currentIndex];
 
 // Funciones de navegación
 const showPrevious = () => {
-  currentIndex = (currentIndex - 1 + urls.length) % urls.length; // Retrocede y vuelve al final si llega al principio
-  iframe.src = urls[currentIndex];
+    currentIndex = (currentIndex - 1 + urls.length) % urls.length; // Retrocede y vuelve al final si llega al principio
+    iframe.src = urls[currentIndex];
 };
 
 const showNext = () => {
-  currentIndex = (currentIndex + 1) % urls.length; // Avanza y vuelve al principio si llega al final
-  iframe.src = urls[currentIndex];
+    currentIndex = (currentIndex + 1) % urls.length; // Avanza y vuelve al principio si llega al final
+    iframe.src = urls[currentIndex];
 };
 
 // Manejar el cierre de sesión
 const logout = () => {
-  alert("Cerrando sesión...");
-  // Redirigir a la página de inicio de sesión (cambiar la URL según corresponda)
-  window.location.href = "../index.html";
+    alert("Cerrando sesión...");
+    localStorage.removeItem("usuario"); // Elimina la información del usuario
+    window.location.href = "../index.html";
 };
 
 // Asignar eventos a los botones
-prevBtn.addEventListener("click", showPrevious);
-nextBtn.addEventListener("click", showNext);
-logoutBtn.addEventListener("click", logout);
+if (prevBtn) prevBtn.addEventListener("click", showPrevious);
+if (nextBtn) nextBtn.addEventListener("click", showNext);
+if (logoutBtn) logoutBtn.addEventListener("click", logout);
