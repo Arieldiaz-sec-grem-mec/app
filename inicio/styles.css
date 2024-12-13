@@ -14,13 +14,14 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: #000000; /* Fondo negro global */
 }
 
 /* Encabezado */
 header {
   width: 100%;
   padding: 10px;
-  background-color: #0a3a04f8; /* Fondo gris oscuro */
+  background-color: #1a1a1a; /* Fondo gris oscuro */
   color: #4bb30e; /* Texto verde */
   display: flex;
   justify-content: space-between;
@@ -36,8 +37,8 @@ header {
 .header #logout-btn {
   padding: 8px 12px;
   background-color: transparent;
-  border: 2px solid #b32f0e; /* Borde verde */
-  border-radius: 25px; /* Redondeo */
+  border: 2px solid #4bb30e; /* Borde verde */
+  border-radius: 10px; /* Redondeo */
   color: #4bb30e; /* Texto verde */
   cursor: pointer;
   font-size: 1em;
@@ -54,14 +55,18 @@ main {
   flex: 1; /* Toma el espacio restante entre el encabezado y pie de página */
   overflow-y: auto; /* Habilita el desplazamiento vertical */
   width: 100%;
+  display: flex;
+  justify-content: center; /* Centrar el iframe */
+  align-items: center;
+  background-color: #1a1a1a; /* Fondo gris oscuro */
 }
 
 iframe#web-viewer {
-  width: 100%;
-  height: 100%; /* Ocupa todo el espacio de su contenedor */
+  width: 90%;
+  height: 90%; /* Ajusta el tamaño del iframe al contenido */
   border: 2px solid #4bb30e; /* Borde verde */
   border-radius: 15px; /* Redondeo */
-  background-color: #000000; /* Fondo negro */
+  background-color: #000000; /* Fondo negro dentro del iframe */
 }
 
 /* Pie de página */
