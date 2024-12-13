@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // URL de tu script de Google Apps
     const url = "https://script.googleusercontent.com/macros/echo?user_content_key=ymBI0cLKn1KrZUEddEMNLtWlQSxqaJ5nQ3Hz7EmV0GkJhmEcIJ_56x6RPlbqq1GT3e6EnJI55PP1pv1KLVTtNf7D7_Ohiyd_m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPVZ3GQDopcOaiEEX4WultQdDS1gC01H7LNQRHJrRbJzXuYHgYV7YOtEHvOdoh1dyc9U-F05sWkHjCZXETl9TrL8PsNv7Uk6zNz9Jw9Md8uu&lib=MH5kqVjUOw6OLTh66UR4MXJ9V3R5bwK4y";
 
+    // Obtener el nombre del usuario almacenado en localStorage
+    const nombreUsuario = localStorage.getItem("usuario");
+
     // Hacer la petición para obtener los datos
     fetch(url)
         .then(response => response.json())
@@ -13,8 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Mostrar los datos completos (sin filtrado)
-            data.forEach(companero => {
+            // Filtrar los datos por el delegado (nombre de usuario)
+            const companerosFiltrados = data.filter(companero => companero["Delegado"] === nombreUsuario);
+
+            // Mostrar los datos filtrados
+            if (companerosFiltrados.length === 0) {
+                compañerosList.innerHTML = "<p>No hay compañeros asignados bajo tu delegación.</p>";
+                return;
+            }
+
+            // Mostrar los datos filtrados
+            companerosFiltrados.forEach(companero => {
                 const card = document.createElement("div");
                 card.classList.add("companero-card");
 
@@ -39,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.appendChild(tarea);
 
                 const fechaIngreso = document.createElement("p");
-                fechaIngreso.textContent = `Fecha de ingreso: ${companero["Fecha de ingreso"]}`;
+                fechaIngreso.textContent = `Fecha de ingreso: ${new Date(companero["Fecha de ingreso"]).toLocaleDateString()}`;
                 card.appendChild(fechaIngreso);
 
                 compañerosList.appendChild(card);
