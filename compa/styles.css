@@ -8,162 +8,108 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
-  background-color: #000; /* Fondo negro */
-  color: #fff; /* Color de texto blanco para que resalte sobre el fondo negro */
 }
 
-/* Contenedor principal */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a; /* Fondo gris oscuro */
+  color: #4bb30e; /* Texto verde */
+}
+
 .container {
-  width: 100%;
-  max-width: 500px; /* Limita el ancho máximo para móviles */
-  margin: 0 auto; /* Centra el formulario horizontalmente */
+  width: 90%;
+  max-width: 600px;
+  background-color: #000000; /* Fondo negro */
+  border: 2px solid #4bb30e; /* Borde verde */
+  border-radius: 15px; /* Bordes redondeados */
   padding: 20px;
-  background-color: #33333300; /* Fondo gris oscuro para el contenedor */
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+/* Títulos */
+.container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #4bb30e; /* Texto verde */
+}
+
+/* Formularios */
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 15px;
 }
 
-h1 {
-  font-size: 1.5rem;
-  color: #fff; /* Título blanco */
-  margin-bottom: 20px;
-  text-align: center;
+form label {
+  font-size: 1em;
+  color: #4bb30e; /* Texto verde */
 }
 
-/* Formulario */
-form {
-  width: 100%;
-}
-
-label {
-  font-size: 1rem;
-  color: #ccc; /* Color gris claro para las etiquetas */
-  margin-bottom: 5px;
-  display: block;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="date"] {
-  width: 100%;
+form input, form select {
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #555; /* Borde gris claro */
-  border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1em;
+  border: 2px solid #4bb30e; /* Borde verde */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #1a1a1a; /* Fondo gris oscuro */
+  color: #ffffff; /* Texto blanco */
+}
+
+form input::placeholder, form select {
+  color: #808080; /* Placeholder gris claro */
+}
+
+form input:focus, form select:focus {
   outline: none;
-  background-color: #444; /* Fondo gris oscuro para los inputs */
-  color: #fff; /* Texto blanco en los inputs */
-  transition: border-color 0.3s ease;
+  border-color: #88e33f; /* Borde verde claro al enfocar */
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus {
-  border-color: #007BFF; /* Color azul al enfocar */
-  transform: scale(1); /* Desactiva el efecto de zoom */
-}
-
-/* Botón de enviar */
-button[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  background-color: #007BFF; /* Azul para el botón */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+/* Botón de envío */
+form button[type="submit"] {
+  padding: 12px;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: transparent;
+  color: #4bb30e; /* Texto verde */
+  border: 2px solid #4bb30e; /* Borde verde */
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button[type="submit"]:hover {
-  background-color: #0056b3; /* Azul más oscuro al hacer hover */
-}
-
-button[type="submit"]:active {
-  transform: scale(0.98);
+form button[type="submit"]:hover {
+  background-color: #4bb30e; /* Fondo verde */
+  color: #1a1a1a; /* Texto negro */
 }
 
 /* Barra de progreso */
 .progress-bar {
   width: 100%;
   height: 10px;
-  background-color: #f3f3f3;
+  background-color: #4bb30e; /* Fondo verde claro */
   border-radius: 5px;
   overflow: hidden;
   margin-top: 20px;
 }
 
 .progress {
-  width: 0%;
   height: 100%;
-  background-color: #007BFF;
-  transition: width 0.5s ease;
+  width: 0%; /* Esto será dinámico */
+  background-color: #88e33f; /* Verde más claro */
+  transition: width 0.3s ease;
 }
 
-/* Ajustes responsivos */
+/* Responsivo */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 1.3rem;
+  .container {
+    width: 100%;
+    padding: 15px;
   }
 
-  button[type="submit"] {
-    font-size: 0.9rem;
-    padding: 8px;
+  form button[type="submit"] {
+    font-size: 1em;
+    padding: 10px;
   }
-
-  input[type="text"],
-  input[type="number"],
-  input[type="date"] {
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-}
-
-@media (max-width: 400px) {
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  button[type="submit"] {
-    font-size: 0.8rem;
-  }
-
-  input[type="text"],
-  input[type="number"],
-  input[type="date"] {
-    font-size: 0.8rem;
-  }
-}
-/* Estilos para el campo de Categorías */
-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #555; /* Borde gris claro */
-  border-radius: 5px;
-  font-size: 1rem;
-  outline: none;
-  background-color: #444; /* Fondo gris oscuro */
-  color: #fff; /* Texto blanco */
-  transition: border-color 0.3s ease;
-}
-
-select:focus {
-  border-color: #007BFF; /* Azul al enfocar */
-}
-
-/* Estilo para las opciones dentro del select */
-option {
-  background-color: #444; /* Fondo gris oscuro */
-  color: #fff; /* Texto blanco */
-  padding: 10px;
-}
-
-option:hover {
-  background-color: #555; /* Fondo más claro cuando se pasa el cursor sobre las opciones */
 }

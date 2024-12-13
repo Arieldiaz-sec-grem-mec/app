@@ -37,7 +37,7 @@ header {
 .header #logout-btn {
   padding: 8px 12px;
   background-color: transparent;
-  border: 2px solid #4bb30e; /* Borde verde */
+  border: 2px solid #b3130e; /* Borde verde */
   border-radius: 10px; /* Redondeo */
   color: #4bb30e; /* Texto verde */
   cursor: pointer;
