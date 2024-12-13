@@ -44,7 +44,7 @@ button {
 }
 
 button:hover {
-    background: #ffcc00;
+    background: #00ff0db7;
     color: #000000;
 }
 
@@ -80,7 +80,7 @@ input[type="password"] {
 }
 
 input:focus {
-    border-color: #ffcc00;
+    border-color: #00ff0db7;
     outline: none;
 }
 
@@ -95,7 +95,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #ffcc00;
+    background: #00ff0db7;
     color: #000000;
 }
 /* Botones de navegación */
