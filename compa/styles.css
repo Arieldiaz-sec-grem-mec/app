@@ -139,3 +139,31 @@ button[type="submit"]:active {
     font-size: 0.8rem;
   }
 }
+/* Estilos para el campo de Categorías */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #555; /* Borde gris claro */
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #444; /* Fondo gris oscuro */
+  color: #fff; /* Texto blanco */
+  transition: border-color 0.3s ease;
+}
+
+select:focus {
+  border-color: #007BFF; /* Azul al enfocar */
+}
+
+/* Estilo para las opciones dentro del select */
+option {
+  background-color: #444; /* Fondo gris oscuro */
+  color: #fff; /* Texto blanco */
+  padding: 10px;
+}
+
+option:hover {
+  background-color: #555; /* Fondo más claro cuando se pasa el cursor sobre las opciones */
+}
