@@ -37,7 +37,7 @@ button {
     color: #ffcc00;
     border: 2px solid #ffcc00;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1em;
     transition: background 0.3s, color 0.3s;
@@ -74,7 +74,7 @@ input[type="password"] {
     background: #333333;
     color: #ffffff;
     border: 2px solid #cccccc;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 1em;
 }
 
@@ -84,11 +84,11 @@ input:focus {
 }
 
 button[type="submit"] {
-    width: 100%;
+    width: 90%;
     background: transparent;
     color: #ffcc00;
     border: 2px solid #ffcc00;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 10px;
     cursor: pointer;
 }
@@ -109,7 +109,7 @@ button[type="submit"]:hover {
     height: 25px;
     background-color: #f3f3f3;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 25px;
     overflow: hidden;
     margin-top: 20px;
 }
