@@ -1,10 +1,10 @@
 // Obtener el nombre del usuario almacenado en localStorage
-const nombreUsuario = localStorage.getItem("nombreUsuario");
+const nombreUsuario = localStorage.getItem("Usuario");
 
 // Mostrar el nombre del usuario en el contenedor correspondiente
 const userDisplay = document.getElementById("user-name");
 if (nombreUsuario) {
-    userDisplay.textContent = `Bienvenido, ${nombreUsuario}`;
+    userDisplay.textContent = `Bienvenido, ${Usuario}`;
 } else {
     userDisplay.textContent = "Usuario desconocido";
 }
