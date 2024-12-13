@@ -1,46 +1,133 @@
-const form = document.getElementById('companionForm');
-const progressBar = document.getElementById('progress');
-const SHEET_ID = '1EK4uXU9QbMQ40Uud5QBGKiVziG9TOqTFxZgcn86ifJE';
-const SHEET_NAME = 'Compañeros';
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+/* Contenedor del formulario */
+.container {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: transparent;
+    text-align: center;
+}
 
-  progressBar.style.width = '50%';
-  progressBar.style.background = 'orange';
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
 
-  const formData = {
-    id: crypto.randomUUID(),
-    name: document.getElementById('name').value,
-    affiliateNumber: document.getElementById('affiliateNumber').value,
-    document: document.getElementById('document').value,
-    category: document.getElementById('category').value,
-    task: document.getElementById('task').value,
-    admissionDate: document.getElementById('admissionDate').value,
-    delegate: localStorage.getItem('usuario') || 'Desconocido',
-  };
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #cccccc;
+}
 
-  try {
-    const response = await fetch(
-      `https://script.google.com/macros/s/AKfycbzJzQgHk5DIhIqWKEjR431DUAiuIjA7iz3ng4i4KVEZ88eZ2ZoY_wQSAqktpoRC_ryCVQ/exec`,
-      {
-        method: 'POST',
-        body: JSON.stringify(formData),
-      }
-    );
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #333333;
+    color: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
 
-    const result = await response.json();
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #ffcc00;
+    outline: none;
+}
 
-    if (result.success) {
-      progressBar.style.width = '100%';
-      progressBar.style.background = 'green';
-      alert('Datos enviados correctamente');
-      form.reset();
-    } else {
-      throw new Error('Error al enviar los datos');
+button {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background: transparent;
+    color: #ffcc00;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #ffcc00;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+button:active {
+    background: #e6b800;
+    color: #000000;
+    transform: scale(0.95);
+}
+
+/* Barra de progreso */
+.progress-bar {
+    margin-top: 10px;
+    background-color: #333333;
+    border-radius: 5px;
+    height: 25px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+
+/* Medios Responsivos */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 15px;
     }
-  } catch (error) {
-    progressBar.style.background = 'red';
-    alert('Hubo un problema al enviar los datos');
-  }
-});
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    label {
+        font-size: 1.1em;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 1.1em;
+    }
+
+    .progress-bar {
+        height: 20px;
+    }
+}
