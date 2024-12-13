@@ -18,15 +18,15 @@ body {
   color: #4bb30e; /* Texto verde */
 }
 
-.container {
+/*.container {
   width: 90%;
   max-width: 600px;
-  background-color: #000000; /* Fondo negro */
-  border: 2px solid #4bb30e; /* Borde verde */
-  border-radius: 15px; /* Bordes redondeados */
+  background-color: #000000; 
+  border: 2px solid #4bb30e; 
+  border-radius: 15px; 
   padding: 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Sombra */
-}
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); 
+}*/
 
 /* Títulos */
 .container h1 {
