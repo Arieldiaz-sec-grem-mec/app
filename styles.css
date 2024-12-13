@@ -21,7 +21,7 @@ body {
 
 h1 {
     font-size: 2.5em;
-    color: #ffcc00;
+    color: #4bb30e;
     margin-bottom: 20px;
 }
 
@@ -34,8 +34,8 @@ h1 {
 
 button {
     background: transparent;
-    color: #ffcc00;
-    border: 2px solid #ffcc00;
+    color: #4bb30e;
+    border: 2px solid #4bb30e;
     padding: 10px 15px;
     border-radius: 25px;
     cursor: pointer;
@@ -87,8 +87,8 @@ input:focus {
 button[type="submit"] {
     width: 90%;
     background: transparent;
-    color: #ffcc00;
-    border: 2px solid #ffcc00;
+    color: #4bb30e;
+    border: 2px solid #4bb30e;
     border-radius: 25px;
     padding: 10px;
     cursor: pointer;
@@ -119,7 +119,7 @@ button[type="submit"]:hover {
 .barra {
     height: 100%;
     width: 0%;
-    background-color: red;
+    background-color: rgb(0, 255, 21);
     transition: width 0.5s ease, background-color 0.5s ease;
 }
 
