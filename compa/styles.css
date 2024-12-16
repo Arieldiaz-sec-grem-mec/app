@@ -1,17 +1,17 @@
 /* styles.css */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
+  background-color: #000000;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 110vh;
 }
 
 .container {
-  background-color: #fff;
+  background-color: #000000;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@ body {
 }
 
 h2 {
-  color: #333;
+  color: #c2b7b7;
   margin-bottom: 20px;
 }
 
@@ -33,14 +33,14 @@ form {
 
 label {
   font-size: 14px;
-  color: #555;
+  color: #ffffff;
   text-align: left;
 }
 
 input, select {
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #33e02d;
   border-radius: 8px;
   width: 100%;
   margin: 5px 0;
@@ -53,8 +53,8 @@ input[type="text"], input[type="number"], input[type="date"] {
 
 button {
   padding: 12px;
-  background-color: #007BFF;
-  color: white;
+  background-color: #00ff43;
+  color: #161516;
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -78,7 +78,7 @@ button:disabled {
 /* Estilo de la barra de progreso */
 .progress-bar {
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #b4a7a7;
   border-radius: 8px;
   margin-top: 20px;
   display: none; /* Se mostrará cuando el formulario se esté enviando */
