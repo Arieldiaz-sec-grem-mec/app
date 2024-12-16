@@ -1,13 +1,12 @@
 const form = document.getElementById('companionForm');
-const progressBar = document.getElementById('progress');
-const SHEET_ID = '1EK4uXU9QbMQ40Uud5QBGKiVziG9TOqTFxZgcn86ifJE';
-const SHEET_NAME = 'Compañeros';
+const submitButton = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  progressBar.style.width = '50%';
-  progressBar.style.background = 'orange';
+  // Desactivar botón y aplicar animación
+  submitButton.disabled = true;
+  submitButton.classList.add('loading-animation');
 
   const formData = {
     id: crypto.randomUUID(),
@@ -32,15 +31,18 @@ form.addEventListener('submit', async (e) => {
     const result = await response.json();
 
     if (result.success) {
-      progressBar.style.width = '100%';
-      progressBar.style.background = 'green';
       alert('Datos enviados correctamente');
       form.reset();
     } else {
       throw new Error('Error al enviar los datos');
     }
   } catch (error) {
-    progressBar.style.background = 'red';
     alert('Hubo un problema al enviar los datos');
+  } finally {
+    // Restaurar botón después de la animación
+    setTimeout(() => {
+      submitButton.disabled = false;
+      submitButton.classList.remove('loading-animation');
+    }, 2000);
   }
 });
