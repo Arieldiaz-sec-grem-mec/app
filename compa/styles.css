@@ -1,144 +1,104 @@
-/* Configuración general */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+input[type="text"], input[type="number"], input[type="date"] {
+  max-width: 100%;
+}
+
+button {
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #003f7f;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Estilo de la barra de progreso */
+.progress-bar {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: none; /* Se mostrará cuando el formulario se esté enviando */
+}
+
+.progress {
+  height: 10px;
+  width: 0;
+  background-color: #007BFF;
+  border-radius: 8px;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    width: 90%;
   }
-  
-  html, body {
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #0d0d0d;
+
+  input, select, button {
+    font-size: 14px;
   }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Encabezado */
-  header {
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #1f1f1f;
-    color: #4bb30e;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #4bb30e;
-  }
-  
-  header .user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  header .user-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #4bb30e;
-  }
-  
-  header #user-name {
-    font-size: 1em;
-  }
-  
-  header .logout-btn {
-    padding: 8px 12px;
-    background-color: transparent;
-    border: 2px solid #b3130e;
-    border-radius: 10px;
-    color: #4bb30e;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  header .logout-btn:hover {
-    background-color: #4bb30e;
-    color: #1a1a1a;
-  }
-  
-  /* Contenedor principal */
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0d0d0d;
-    overflow: hidden;
-  }
-  
-  iframe#web-viewer {
-    width: 95%;
-    height: 90%;
-    border: 2px solid #4bb30e;
-    border-radius: 15px;
-    background-color: #000000;
-  }
-  
-  /* Botones de navegación flotantes */
-  .floating-nav {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-btn {
-    width: 50px;
-    height: 50px;
-    background-color: #4bb30e;
-    color: #1a1a1a;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.5em;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, background-color 0.3s ease;
-  }
-  
-  .nav-btn:hover {
-    background-color: #6cd91f;
-  }
-  
-  .nav-btn:active {
-    transform: scale(0.9);
-  }
-  
-  /* Ajustes responsivos */
-  @media (max-width: 768px) {
-    iframe#web-viewer {
-      width: 100%;
-      height: 85%;
-    }
-  
-    .nav-btn {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2em;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .nav-btn {
-      width: 35px;
-      height: 35px;
-      font-size: 1em;
-    }
-  
-    header {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    header .logout-btn {
-      font-size: 0.9em;
-      padding: 6px 10px;
-    }
-  }
-  
+}

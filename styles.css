@@ -134,7 +134,7 @@ button[type="submit"]:hover {
 .barra {
     height: 100%;
     width: 0%;
-    background-color: #00ff0db7;
+    background-color: #ffee00ad;
     transition: width 0.5s ease;
 }
 
@@ -145,7 +145,7 @@ button[type="submit"]:hover {
     transform: translateX(-50%);
     font-size: 14px;
     font-weight: bold;
-    color: #ffffff;
+    color: #050404;
     line-height: 25px;
 }
 

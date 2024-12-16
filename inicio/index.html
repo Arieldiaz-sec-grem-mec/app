@@ -20,13 +20,13 @@
 
   <!-- Contenedor principal -->
   <main>
-    <iframe id="web-viewer" src="" frameborder="0" title="Visualizador Web"></iframe>
+    <iframe id="web-viewer" src="inicio.html" frameborder="0" title="Visualizador Web"></iframe>
   </main>
 
   <!-- Botones de navegación flotantes -->
   <div class="floating-nav">
-    <button id="prev-btn" class="nav-btn">&lt;</button>
-    <button id="next-btn" class="nav-btn">&gt;</button>
+    <button id="prev-btn" class="nav-btn" onclick="navigate(-1)">&lt;</button>
+    <button id="next-btn" class="nav-btn" onclick="navigate(1)">&gt;</button>
   </div>
 
   <script src="main.js"></script>
