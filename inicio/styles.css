@@ -1,4 +1,4 @@
-/* General */
+/* Configuración general */
 * {
   margin: 0;
   padding: 0;
@@ -6,130 +6,138 @@
 }
 
 html, body {
-  height: 110%;
+  height: 100%;
   font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  background-color: #000000; /* Fondo negro global */
 }
 
 /* Encabezado */
 header {
   width: 100%;
-  padding: 10px;
-  background-color: #1a1a1a; /* Fondo gris oscuro */
-  color: #4bb30e; /* Texto verde */
+  padding: 10px 20px;
+  background-color: #1f1f1f;
+  color: #4bb30e;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-shrink: 0; /* Asegura que el encabezado no se reduzca */
-  border-bottom: 2px solid #4bb30e; /* Borde inferior verde */
+  border-bottom: 2px solid #4bb30e;
 }
 
-header .header {
+header .user-info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  gap: 10px;
+}
+
+header .user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #4bb30e;
 }
 
 header #user-name {
   font-size: 1em;
 }
 
-header #logout-btn {
+header .logout-btn {
   padding: 8px 12px;
   background-color: transparent;
-  border: 2px solid #b3130e; /* Borde rojo */
-  border-radius: 10px; /* Redondeo */
-  color: #4bb30e; /* Texto verde */
-  cursor: pointer;
+  border: 2px solid #b3130e;
+  border-radius: 10px;
+  color: #4bb30e;
   font-size: 1em;
+  cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
-header #logout-btn:hover {
-  background-color: #4bb30e; /* Fondo verde */
-  color: #1a1a1a; /* Texto negro */
+header .logout-btn:hover {
+  background-color: #4bb30e;
+  color: #1a1a1a;
 }
 
-/* Contenedor principal con desplazamiento */
+/* Contenedor principal */
 main {
-  flex: 1; /* Toma el espacio restante entre el encabezado y pie de página */
-  width: 100%;
+  flex: 1;
   display: flex;
-  justify-content: center; /* Centra el iframe */
+  justify-content: center;
   align-items: center;
+  background-color: #0d0d0d;
   overflow: hidden;
-  background-color: #1a1a1a; /* Fondo gris oscuro */
 }
 
 iframe#web-viewer {
-  width: 100%;
-  height: 100%; /* Ajusta la altura para ocupar el espacio entre el encabezado y pie de página */
-  border: 2px solid #4bb30e; /* Borde verde */
-  border-radius: 15px; /* Redondeo */
-  background-color: #000000; /* Fondo negro dentro del iframe */
+  width: 95%;
+  height: 90%;
+  border: 2px solid #4bb30e;
+  border-radius: 15px;
+  background-color: #000000;
 }
 
-/* Pie de página */
-footer {
-  width: 100%;
-  padding: 10px;
-  background-color: #1a1a1a; /* Fondo gris oscuro */
+/* Botones de navegación flotantes */
+.floating-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: space-between; /* Botones en los extremos */
-  align-items: center;
-  flex-shrink: 0; /* Asegura que el pie de página no se reduzca */
-  border-top: 2px solid #4bb30e; /* Borde superior verde */
+  gap: 20px;
 }
 
-footer .nav-btn {
-  margin: 0 10px;
-  background-color: transparent;
-  color: #4bb30e; /* Texto verde */
-  border: 2px solid #4bb30e; /* Borde verde */
-  padding: 12px;
+.nav-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #4bb30e;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 50%;
   font-size: 1.5em;
-  border-radius: 50%; /* Botones redondos */
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-footer .nav-btn:hover {
-  background-color: #4bb30e; /* Fondo verde */
-  color: #1a1a1a; /* Texto oscuro */
+.nav-btn:hover {
+  background-color: #6cd91f;
 }
 
-footer .nav-btn:active {
+.nav-btn:active {
   transform: scale(0.9);
 }
 
 /* Ajustes responsivos */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
+  iframe#web-viewer {
+    width: 100%;
+    height: 85%;
   }
 
-  header #logout-btn {
-    margin-top: 10px;
-  }
-
-  footer .nav-btn {
-    margin: 0 5px;
-    padding: 10px;
-    font-size: 1.3em;
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
   }
 }
 
-@media (max-width: 400px) {
-  footer .nav-btn {
-    padding: 8px;
-    font-size: 1.1em;
+@media (max-width: 480px) {
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1em;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header .logout-btn {
+    font-size: 0.9em;
+    padding: 6px 10px;
   }
 }

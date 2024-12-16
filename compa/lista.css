@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #000000;
     padding: 20px;
 }
 
@@ -14,14 +14,14 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #000000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #51d60d;
     margin-bottom: 20px;
 }
 
@@ -32,11 +32,11 @@ h1 {
 }
 
 .companero-card {
-    background-color: #fff;
+    background-color: #a4dd8f;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #e20e0e;
     border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgb(204 188 188 / 0%);
 }
 
 .companero-card h3 {
@@ -46,5 +46,5 @@ h1 {
 
 .companero-card p {
     margin: 5px 0;
-    color: #555;
+    color: #000000;
 }

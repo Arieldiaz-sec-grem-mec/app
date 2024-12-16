@@ -1,25 +1,18 @@
-// Obtener el nombre del usuario almacenado en localStorage
+// Obtener el nombre del usuario desde localStorage
 const nombreUsuario = localStorage.getItem("usuario");
-
-// Mostrar el nombre del usuario en el contenedor correspondiente
 const userDisplay = document.getElementById("user-name");
+
+// Mostrar el nombre del usuario
 if (userDisplay) {
-    if (nombreUsuario) {
-        userDisplay.textContent = `Bienvenido, ${nombreUsuario}`;
-    } else {
-        userDisplay.textContent = "Usuario desconocido";
-    }
-} else {
-    console.warn("No se encontró el elemento 'user-name'.");
+  userDisplay.textContent = nombreUsuario ? `Bienvenido, ${nombreUsuario}` : "Usuario desconocido";
 }
 
-// Lista de URLs de las webs
+// URLs de las páginas a navegar
 const urls = [
-    "../permisos/index.html",
-    "../utiles/index.html",
-    "../indemnizacion/index.html",
-    "../compa/index.html",
-    "../compa/lista.html"
+  
+  "../indemnizacion/index.html",
+  "../compa/index.html",
+  "../compa/lista.html"
 ];
 
 // Índice actual
@@ -36,26 +29,23 @@ iframe.src = urls[currentIndex];
 
 // Funciones de navegación
 const showPrevious = () => {
-    currentIndex = (currentIndex - 1 + urls.length) % urls.length; // Retrocede y vuelve al final si llega al principio
-    iframe.src = urls[currentIndex];
+  currentIndex = (currentIndex - 1 + urls.length) % urls.length;
+  iframe.src = urls[currentIndex];
 };
 
 const showNext = () => {
-    currentIndex = (currentIndex + 1) % urls.length; // Avanza y vuelve al principio si llega al final
-    iframe.src = urls[currentIndex];
+  currentIndex = (currentIndex + 1) % urls.length;
+  iframe.src = urls[currentIndex];
 };
 
-// Manejar el cierre de sesión
+// Función para cerrar sesión
 const logout = () => {
-    alert("Cerrando sesión...");
-    localStorage.removeItem("usuario"); // Elimina la información del usuario
-    window.location.href = "../index.html";
+  alert("Cerrando sesión...");
+  localStorage.removeItem("usuario");
+  window.location.href = "../index.html";
 };
 
-// Asignar eventos a los botones
-if (prevBtn) prevBtn.addEventListener("click", showPrevious);
-if (nextBtn) nextBtn.addEventListener("click", showNext);
-if (logoutBtn) logoutBtn.addEventListener("click", logout);
-
-
-  
+// Asignar eventos a botones
+prevBtn.addEventListener("click", showPrevious);
+nextBtn.addEventListener("click", showNext);
+logoutBtn.addEventListener("click", logout);

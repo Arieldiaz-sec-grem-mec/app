@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navegación de Webs</title>
+  <title>Navegación Web Mejorada</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Encabezado -->
   <header>
     <div class="header">
-      <span id="user-name">Cargando usuario...</span>
-      <button id="logout-btn">Cerrar Sesión</button>
-  </div>
-  
+      <div class="user-info">
+        <img src="APP RAMA.png" alt="Usuario" class="user-icon">
+        <span id="user-name">Cargando usuario...</span>
+      </div>
+      <button id="logout-btn" class="logout-btn">Cerrar Sesión</button>
+    </div>
   </header>
 
-  <!-- Contenedor del iframe -->
+  <!-- Contenedor principal -->
   <main>
-    <iframe id="web-viewer" src="" frameborder="0"></iframe>
+    <iframe id="web-viewer" src="" frameborder="0" title="Visualizador Web"></iframe>
   </main>
 
-  <!-- Botones de navegación -->
-  <footer>
+  <!-- Botones de navegación flotantes -->
+  <div class="floating-nav">
     <button id="prev-btn" class="nav-btn">&lt;</button>
     <button id="next-btn" class="nav-btn">&gt;</button>
-  </footer>
+  </div>
 
   <script src="main.js"></script>
 </body>
