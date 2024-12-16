@@ -1,4 +1,4 @@
-/* styles.css */
+/* Estilos generales */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #000000;
@@ -37,7 +37,8 @@ label {
   text-align: left;
 }
 
-input, select {
+input,
+select {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #33e02d;
@@ -47,10 +48,13 @@ input, select {
   box-sizing: border-box;
 }
 
-input[type="text"], input[type="number"], input[type="date"] {
+input[type="text"],
+input[type="number"],
+input[type="date"] {
   max-width: 100%;
 }
 
+/* Estilo del botón */
 button {
   padding: 12px;
   background-color: #00ff43;
@@ -75,20 +79,18 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Estilo de la barra de progreso */
-.progress-bar {
-  width: 100%;
-  background-color: #b4a7a7;
-  border-radius: 8px;
-  margin-top: 20px;
-  display: none; /* Se mostrará cuando el formulario se esté enviando */
+/* Animación de colores para el botón */
+@keyframes colorFade {
+  0% {
+    background-color: red;
+  }
+  100% {
+    background-color: green;
+  }
 }
 
-.progress {
-  height: 10px;
-  width: 0;
-  background-color: #007BFF;
-  border-radius: 8px;
+button.loading-animation {
+  animation: colorFade 2s linear;
 }
 
 /* Responsividad */
@@ -98,7 +100,9 @@ button:disabled {
     width: 90%;
   }
 
-  input, select, button {
+  input,
+  select,
+  button {
     font-size: 14px;
   }
 }
