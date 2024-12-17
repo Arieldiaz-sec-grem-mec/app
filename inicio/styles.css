@@ -31,15 +31,27 @@ header {
 header .user-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 55px;
 }
 
 header .user-icon {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 2px solid #4bb30e;
+
+  /* Manejo de ubicación */
+  position: relative; /* Permite moverlo respecto a su posición original */
+  top: 16px; /* Ajusta hacia abajo (+) o hacia arriba (-) */
+  left: -13px; /* Ajusta hacia la derecha (+) o hacia la izquierda (-) */
 }
+
+/* Ejemplo de hover para moverlo dinámicamente */
+header .user-icon:hover {
+  top: -5px; /* Lo mueve ligeramente hacia arriba */
+  left: 5px; /* Lo desplaza hacia la derecha */
+}
+
 
 header #user-name {
   font-size: 1em;
@@ -53,13 +65,24 @@ header .logout-btn {
   color: #4bb30e;
   font-size: 1em;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* Manejo de ubicación */
+  position: relative; /* relative para moverlo respecto a su posición original */
+  top: -6px; /* Mueve hacia abajo (+) o arriba (-) */
+  left: 170px; /* Mueve hacia la derecha (+) o izquierda (-) */
 }
 
+/* Ejemplo de hover para moverlo dinámicamente */
 header .logout-btn:hover {
   background-color: #4bb30e;
   color: #1a1a1a;
+
+  /* Efecto: mueve el botón al pasar el mouse */
+  top: -5px; /* Lo mueve ligeramente hacia arriba */
+  left: 5px; /* Lo desplaza hacia la derecha */
 }
+
 
 /* Contenedor principal */
 main {
