@@ -79,8 +79,8 @@ header .logout-btn:hover {
   color: #1a1a1a;
 
   /* Efecto: mueve el botón al pasar el mouse */
-  top: -5px; /* Lo mueve ligeramente hacia arriba */
-  left: 5px; /* Lo desplaza hacia la derecha */
+  top: -6px; /* Lo mueve ligeramente hacia arriba */
+  left: 170px; /* Lo desplaza hacia la derecha */
 }
 
 
