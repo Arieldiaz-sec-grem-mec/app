@@ -12,7 +12,8 @@ const urls = [
   
   "../indemnizacion/index.html",
   "../compa/index.html",
-  "../compa/lista.html"
+  "../compa/lista.html",
+  "../gestiones/index.html
 ];
 
 // Índice actual
