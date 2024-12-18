@@ -1,108 +1,117 @@
 /* Estilos generales */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #000000;
   margin: 0;
   padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110vh;
-}
-
-.container {
-  background-color: #000000;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
+  height: 100vh;
   text-align: center;
 }
 
-h2 {
-  color: #c2b7b7;
-  margin-bottom: 20px;
+.container {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #1a1a1a; /* Fondo gris oscuro */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #4bb30e;
 }
 
 label {
-  font-size: 14px;
-  color: #ffffff;
-  text-align: left;
-}
-
-input,
-select {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #33e02d;
-  border-radius: 8px;
-  width: 100%;
-  margin: 5px 0;
-  box-sizing: border-box;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #cccccc;
 }
 
 input[type="text"],
 input[type="number"],
-input[type="date"] {
-  max-width: 100%;
+input[type="date"],
+select {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #333333;
+  color: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1em;
 }
 
-/* Estilo del botón */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+  border-color: #4bb30e;
+  outline: none;
+}
+
 button {
-  padding: 12px;
-  background-color: #00ff43;
-  color: #161516;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #4bb30e;
+  border-radius: 5px;
+  background: transparent;
+  color: #4bb30e;
+  font-size: 1.2em;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background: #4bb30e;
+  color: #1a1a1a;
+  transform: scale(1.05);
 }
 
 button:active {
-  background-color: #003f7f;
+  background: #369e0d;
+  color: #1a1a1a;
+  transform: scale(0.95);
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Animación de colores para el botón */
-@keyframes colorFade {
-  0% {
-    background-color: red;
-  }
-  100% {
-    background-color: green;
-  }
-}
-
+/* Estilo de la animación de carga */
 button.loading-animation {
-  animation: colorFade 2s linear;
+  background: #4bb30e;
+  color: #1a1a1a;
+  cursor: wait;
 }
 
-/* Responsividad */
+/* Medios responsivos */
 @media (max-width: 600px) {
   .container {
-    padding: 15px;
-    width: 90%;
+      width: 100%;
+      padding: 15px;
   }
 
-  input,
-  select,
+  h2 {
+      font-size: 1.8em;
+  }
+
+  label {
+      font-size: 1em;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+      font-size: 0.9em;
+  }
+
   button {
-    font-size: 14px;
+      padding: 8px;
+      font-size: 1.1em;
   }
 }
